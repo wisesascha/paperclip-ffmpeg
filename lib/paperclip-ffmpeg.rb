@@ -106,6 +106,8 @@ module Paperclip
         @convert_options[:input][:ss] = @time
         @convert_options[:input][:vframes] = 1
         @convert_options[:output][:f] = 'image2'
+      when 'mp4'
+       parameters << "-vcodec libx264"
       end
       
       # Add source
