@@ -109,7 +109,7 @@ module Paperclip
       when 'mp4'
        parameters << "-vcodec libx264"
       when 'flv'
-        parameters << '-qmax 10'
+        #parameters << '-qmax 10'
       end
       
       # Add source
@@ -117,7 +117,7 @@ module Paperclip
       parameters << "-i :source"
       parameters << @convert_options[:output].map { |k,v| "-#{k.to_s} #{v} "}
       parameters << ":dest"
-
+      parameters << '-qmax 10'
       parameters = parameters.flatten.compact.join(" ").strip.squeeze(" ")
       
       Paperclip.log("[paperclip][ffmpeg] #{parameters}")
