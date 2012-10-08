@@ -107,7 +107,7 @@ module Paperclip
         @convert_options[:input][:vframes] = 1
         @convert_options[:output][:f] = 'image2'
       when 'mp4'
-       parameters << " "
+       parameters << "-vcodec libx264"
       when 'flv'
         #parameters << '-qmax 10'
       end
